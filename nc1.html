@@ -39,16 +39,20 @@ ninja1.showStats();
                 this.health = 100; //public
             
 
-                Ninja.prototype.drinkSake = function(){  //This should add +10 Health to the Ninja -set //not private
+                Ninja.prototype.drinkSake = function(){  //This should add +10 Health to the Ninja -set //publc var, private method.
+                    //PROTO here means we are making drinkSake the same for every instance.
                     this.health+=10;
                     return this;
                 }
+                Ninja.drinkSake;
                 this.showStats = function(){ //This should show the Ninja's Strength and Speed, as well as their health. - get
-                    //remember, speed and strength are private.
+                    //remember, speed and strength are private.  THIS here to make this function public.
                     console.log(strength);
                     console.log(speed);
+                    console.log(this.health);
                     return this;
                 }
+                
             }
                 
             //method is outside of class so it's public.
@@ -65,6 +69,8 @@ ninja1.showStats();
             const ninja1 = new Ninja("Glen");
             ninja1.sayName();
             //console.log(ninja1.showStats());
+            ninja1.showStats();
+            
             ninja1.showStats();
         </script>
     </body>
