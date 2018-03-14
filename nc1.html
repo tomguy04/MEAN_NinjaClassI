@@ -38,28 +38,29 @@ ninja1.showStats();
                 this.name = name; //public
                 this.health = 100; //public
             
+                this.showStats = function(){ //This should show the Ninja's Strength and Speed, as well as their health. - get
+                    //remember, speed and strength are private.  THIS here to make this function public.
+                    // console.log(strength);
+                    // console.log(speed);
+                    // console.log(this.health);
+                    console.log('strength: ' +strength+ 'speed: ' +speed+ 'health: ' + this.health);
+                    return this;
+                }
+            }
 
-                Ninja.prototype.drinkSake = function(){  //This should add +10 Health to the Ninja -set //publc var, private method.
+                
+            //method is outside of class so it's public.
+            Ninja.prototype.sayName = function(){ //This should log that Ninja's name to the console.  -get  //not privatge
+                    console.log("my ninja name is " + this.name);
+                    return this;
+            }
+            Ninja.prototype.drinkSake = function(){  //This should add +10 Health to the Ninja -set //publc var, private method.
                     //PROTO here means we are making drinkSake the same for every instance.
                     this.health+=10;
                     return this;
                 }
-                Ninja.drinkSake;
-                this.showStats = function(){ //This should show the Ninja's Strength and Speed, as well as their health. - get
-                    //remember, speed and strength are private.  THIS here to make this function public.
-                    console.log(strength);
-                    console.log(speed);
-                    console.log(this.health);
-                    return this;
-                }
+
                 
-            }
-                
-            //method is outside of class so it's public.
-            Ninja.prototype.sayName = function(){ //This should log that Ninja's name to the console.  -get  //not privatge
-                    console.log(this.name);
-                    return this;
-            }
             // Example Outputs
             // const ninja1 = new Ninja("Hyabusa");
             // ninja1.sayName();
@@ -70,8 +71,8 @@ ninja1.showStats();
             ninja1.sayName();
             //console.log(ninja1.showStats());
             ninja1.showStats();
-            
-            ninja1.showStats();
+            //ninja1.drinkSake();
+            //ninja1.showStats();
         </script>
     </body>
 </html>
